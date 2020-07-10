@@ -9,9 +9,9 @@ const userSchema = new Schema({
         unique:true,
         trim: true,
         minLength: 3
-    },
+    }
 }, {
-    timestamps: true,    
+    timestamps: true  
 });
 
 const User = mongoose.model('User', userSchema);
