@@ -8,9 +8,9 @@ const exerciseSchema = new Schema({
     duration: {type: Number, required:true},
     date: {type: Date, required:true},
 }, {
-    timestamps: true,    
+    timestamps: true,   
 });
 
 const Exercise = mongoose.model('Exercise', exerciseSchema);
 
-model.exports = Exercise;
+module.exports = Exercise;
