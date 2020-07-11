@@ -61,7 +61,7 @@ export default class CreateExercise extends Component {
             date: this.state.date
         }
 
-        console.log(exercise)
+        console.log(exercise);
 
         window.location = '/';
     }
@@ -82,8 +82,7 @@ export default class CreateExercise extends Component {
                             this.state.users.map(function(user) {
                                 return <option 
                                 key={user}
-                                value={user}>
-                                    {user}
+                                value={user}>{user}
                             </option>
                             })
                         }   
