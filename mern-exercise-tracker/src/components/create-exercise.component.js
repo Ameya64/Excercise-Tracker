@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 export default class CreateExercise extends Component {
     constructor(props) {
         super(props)
@@ -14,7 +15,7 @@ export default class CreateExercise extends Component {
             username: '',
             description: '',
             duration: 0,
-            date = new Date(),
+            date: new Date(),
             users: []
         }
     }
@@ -28,36 +29,36 @@ export default class CreateExercise extends Component {
 
     onChangeUsername(e) {
         this.setState({
-            username = e.target.value
+            username: e.target.value
         })
     }     
 
     onChangeDescription(e) {
         this.setState({
-            description = e.target.value
+            description: e.target.value
         })
     }   
 
     onChangeDuration(e) {
         this.setState({
-            duration = e.target.value
+            duration: e.target.value
         })
     }   
 
-    onChangeDate(e) {
+    onChangeDate(date) {
         this.setState({
-            date = date
+            date: date
         })
     }   
 
-    onSubmit() {
+    onSubmit(e) {
         e.preventDefault();
 
         const exercise = {
-            username = this.state.username,
-            description = this.state.description,
-            duration = this.state.duration,
-            date = this.state.date
+            username: this.state.username,
+            description: this.state.description,
+            duration: this.state.duration,
+            date: this.state.date
         }
 
         console.log(exercise)
@@ -88,7 +89,7 @@ export default class CreateExercise extends Component {
                         }   
                         </select>
                     </div>
-                    <div className="from-group">
+                    <div className="form-group">
                         <label>Description: </label>
                         <input type="text"
                         required
@@ -97,7 +98,7 @@ export default class CreateExercise extends Component {
                         onChange={this.onChangeDescription}
                         />      
                     </div>
-                    <div className="from-group">
+                    <div className="form-group">
                         <label>Duration (in minutes): </label>
                         <input type="text"
                         required
@@ -106,7 +107,7 @@ export default class CreateExercise extends Component {
                         onChange={this.onChangeDuration}
                         />      
                     </div>
-                    <div className="from-group">
+                    <div className="form-group">
                         <label>Date: </label>
                         <div>
                             <DatePicker
