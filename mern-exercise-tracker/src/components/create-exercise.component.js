@@ -103,7 +103,7 @@ export default class CreateExercise extends Component {
                         <input type="text"
                         required
                         className="form-control"
-                        value={this.state.description}
+                        value={this.state.duration}
                         onChange={this.onChangeDuration}
                         />      
                     </div>
