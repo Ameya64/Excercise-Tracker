@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DatePicker from 'react-datepicker';
+import axios from 'axios';
 import 'react-datepicker/dist/react-datepicker.css';
 export default class CreateExercise extends Component {
     constructor(props) {
@@ -21,34 +22,44 @@ export default class CreateExercise extends Component {
     }
 
     componentDidMount() {
-        this.setState ({
+        /*this.setState ({
             users: ['test user'],
             username: 'test user'
-        });
+        });*/
+
+        axios.get('http://localhost:5000/users')
+        .then(response => {
+            if(response.data.length > 0) {
+                this.setState ({
+                    users: response.data.map(user => user.username),
+                    username: response.data[0].username
+                });
+            }
+        })
     }
 
     onChangeUsername(e) {
         this.setState({
             username: e.target.value
-        })
+        });
     }     
 
     onChangeDescription(e) {
         this.setState({
             description: e.target.value
-        })
+        });
     }   
 
     onChangeDuration(e) {
         this.setState({
             duration: e.target.value
-        })
+        });
     }   
 
     onChangeDate(date) {
         this.setState({
             date: date
-        })
+        });
     }   
 
     onSubmit(e) {
@@ -62,6 +73,9 @@ export default class CreateExercise extends Component {
         }
 
         console.log(exercise);
+
+        axios.post('http://localhost:5000/exercises/add',exercise)
+        .then(res => console.log(res.data));
 
         window.location = '/';
     }
@@ -77,13 +91,14 @@ export default class CreateExercise extends Component {
                         required
                         className="form-control"
                         value={this.state.username}
-                        onChange={this.state.onChangeUsername}>
+                        onChange={this.onChangeUsername}>
                         {
                             this.state.users.map(function(user) {
                                 return <option 
-                                key={user}
-                                value={user}>{user}
-                            </option>
+                                        key={user}
+                                        value={user}>
+                                        {user}
+                                       </option>
                             })
                         }   
                         </select>
