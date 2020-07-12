@@ -54,7 +54,7 @@ exerciseList() {
                 <div>
                     <h3>Logged Exercises</h3>
                     <table className="table">
-                    <thead className="thead-dark">
+                    <thead className="thead-light">
                         <tr>
                         <th>UserName</th>
                         <th>Description</th>
