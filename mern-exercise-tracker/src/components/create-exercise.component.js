@@ -27,7 +27,7 @@ export default class CreateExercise extends Component {
             username: 'test user'
         });*/
 
-        axios.get('http://localhost:5000/users')
+        axios.get('http://localhost:5000/users/')
         .then(response => {
             if(response.data.length > 0) {
                 this.setState ({
