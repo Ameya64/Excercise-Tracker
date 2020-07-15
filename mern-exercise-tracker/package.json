@@ -1,5 +1,6 @@
 {
   "name": "mern-exercise-tracker",
+  "homepage": "http://ameyaingale.com/exercise-tracker_react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

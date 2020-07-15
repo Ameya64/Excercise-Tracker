@@ -11,7 +11,8 @@ import CreateUser from './components/create-user.component';
 
 function App() {
   return (
-    <Router>
+    //basename={'/exercise-tracker_react/'}
+    <Router> 
     <div className="container">
     <Navbar />
     <br />
