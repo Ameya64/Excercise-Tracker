@@ -25,7 +25,7 @@ constructor(props) {
 }
 
 componentDidMount() {
-    axios.get('http://localhost:5000/exercises/')
+    axios.get('https://bibliotheque-chaise-53095.herokuapp.com/exercises/')
     .then(res => {
         this.setState({
             exercises: res.data
@@ -37,7 +37,7 @@ componentDidMount() {
 }
 
 deleteExercise(id) {
-    axios.delete('http://localhost:5000/exercises/'+id)
+    axios.delete('https://bibliotheque-chaise-53095.herokuapp.com/exercises/'+id)
     .then(res => console.log(res.data));
     this.setState({
         exercises: this.state.exercises.filter(elist => elist._id !== id)
