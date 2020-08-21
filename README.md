@@ -11,10 +11,10 @@ An exercise tracker app to be able to plan and keep track of your exercise regim
 
 ### Technologies used 
 
-Front-End: React
+- Front-End: React
 
-Middleware: Express/Node
+- Middleware: Express/Node
 
-Database: MongoDB 
+- Database: MongoDB 
 
-Insomnia/Postman
+- Insomnia/Postman
